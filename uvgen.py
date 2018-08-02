@@ -251,11 +251,18 @@ class UVCreate(object):
         # Get baselines 
         nant = len(antennas)
         bl = []
+	A1 = []
+	A2 = []
         for i in range(nant):
             for j in range(i+1,nant):
+		A1.append(i)
+		A2.append(j)
                 bl.append(antennas[i] - antennas[j])
 
-        # Need some numpy array functionality
+	np.savetxt('A1.txt', A1, header='Antenna 1 for each baseline in UV')
+	np.savetxt('A2.txt', A2, header='Antenna 2 for each baseline in UV')
+        
+	# Need some numpy array functionality
         bl = numpy.array(bl)
 
         # Finaly, the u,v,w coordinates!
