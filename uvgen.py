@@ -259,8 +259,8 @@ class UVCreate(object):
 		A2.append(j)
                 bl.append(antennas[i] - antennas[j])
 
-	np.savetxt('A1.txt', A1, header='Antenna 1 for each baseline in UV')
-	np.savetxt('A2.txt', A2, header='Antenna 2 for each baseline in UV')
+	numpy.savetxt('A1.txt', A1, header='Antenna 1 for each baseline in UV')
+	numpy.savetxt('A2.txt', A2, header='Antenna 2 for each baseline in UV')
         
 	# Need some numpy array functionality
         bl = numpy.array(bl)
